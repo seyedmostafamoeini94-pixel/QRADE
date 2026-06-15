@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>QRADE</title>
+</head>
+<body>
+
+<h1>QRADE</h1>
+
+<p>QRADE (Risk Assessment for Damage and Exposure) is a QGIS Processing plugin for rockfall risk assessment based on the IMIRILAND methodology for landslides in mountainous areas. It combines kinetic-energy raster data with land-cover or exposed-element information to generate GIS outputs, reports, an interactive risk dashboard, and BIM-oriented deliverables.</p>
+
+<h2>Requirements</h2>
+<ul>
+<li>QuickOSM is required for Auto land-cover generation from OpenStreetMap data.</li>
+<li>Auto land-cover mode requires internet access and availability of the Overpass API.</li>
+<li>Manual land-cover mode can be used offline with suitable local vector data containing a lowercase <code>classification</code> field.</li>
+<li>QPROTO is recommended for preparing the kinetic-energy raster, but QRADE can use suitable kinetic-energy raster outputs from other rockfall hazard-analysis tools.</li>
+</ul>
+
+<h2>Basic Workflow</h2>
+<ol>
+<li>Prepare a kinetic-energy raster in joules.</li>
+<li>Choose Auto OSM or Manual land-cover input.</li>
+<li>Choose the default risk-value table or a custom CSV.</li>
+<li>Set the temporal probability mode.</li>
+<li>Select an output folder.</li>
+<li>Run QRADE and review the generated result folder.</li>
+</ol>
+
+<h2>Inputs</h2>
+<ul>
+<li>Land Cover Source</li>
+<li>Extent</li>
+<li>Risk Assessment Values</li>
+<li>Area Type and Buildings Typology</li>
+<li>Kinetic Energy raster (J)</li>
+<li>Temporal Probability of Occurrence</li>
+<li>Output Folder and optional GIS layer outputs</li>
+</ul>
+
+<h2>Outputs</h2>
+<p>QRADE creates a timestamped <code>QRADE_Result_TIMESTAMP/</code> folder with an organized structure:</p>
+<ul>
+<li><code>gis/</code>: LandCover, Runout, and Risk Assessment GeoPackage layers.</li>
+<li><code>summary/</code>: summary JSON and CSV files.</li>
+<li><code>bim/</code>: BIM-ready CSV/JSON, IFC GUID mapping template, and BCF issues folder.</li>
+<li><code>reports/qa_qc/</code>: QA/QC HTML, JSON, and CSV reports.</li>
+<li><code>reports/web_report/</code>: Interactive Risk Dashboard, data, and assets.</li>
+<li><code>risk_tables/</code>: copied custom risk-value table when Manual mode is used.</li>
+<li><code>qrade_output_manifest.json</code>: manifest used by the QRADE Smart Assistant.</li>
+</ul>
+
+<h2>Smart Assistant</h2>
+<p>The QRADE Smart Assistant includes:</p>
+<ul>
+<li>Before running QRADE: Edit Risk Assessment Values.</li>
+<li>After running QRADE: Select QRADE Result Folder.</li>
+<li>Reports: Open Interactive Risk Dashboard and Open QA/QC Report.</li>
+<li>BIM Deliverables: Open BIM-ready CSV, Open IFC GUID Mapping Template, and Open BCF Issues Folder.</li>
+</ul>
+
+<h2>Risk Assessment Values</h2>
+<p>Default mode uses <code>Input/classification_table.csv</code>. Manual mode uses a user-selected custom CSV. The editor opens <code>Templates/classification_table_manual.csv</code> as the editable baseline and saves custom tables in the user QGIS settings directory. Do not edit the packaged <code>Input/</code> or <code>Templates/</code> CSV files directly.</p>
+
+<h2>Documentation And Training Data</h2>
+<p>Detailed documentation and training datasets will be provided through the public QRADE repository.</p>
+
+<h2>Credits And Contact</h2>
+<p>The methodology was developed under the scientific supervision of Marta Castelli. QRADE was designed and implemented by Seyedmostafa Moeini, with technical support from Stefano Campus.</p>
+<p>The development of QRADE was partially supported by PNRR (Piano Nazionale di Ripresa e Resilienza).</p>
+<p>Contact: <a href="mailto:seyedmostafa.moeini@polito.it">seyedmostafa.moeini@polito.it</a>; <a href="mailto:marta.castelli@polito.it">marta.castelli@polito.it</a></p>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+# Plugin metadata (QGIS)
+[general]
+name=QRADE
+qgisMinimumVersion=3.16
+qgisMaximumVersion=4.99
+description=Rockfall risk assessment plugin based on the IMIRILAND method
+version=1.0.0
+author=Seyedmostafa Moeini, Marta Castelli
+email=TODO: add maintainer email before publication
+category=Analysis
+tags=rockfall, landslide, risk assessment, hazard, exposure, vulnerability
+homepage=TODO: add project homepage or GitHub repository URL before publication
+repository=TODO: add GitHub repository URL before publication
+tracker=TODO: add GitHub issues URL before publication
+license=GPL-3.0-or-later
+hasProcessingProvider=True
+
+about=
+    QRADE (Risk Assessment for Damage and Exposure) is a QGIS Processing plugin for rockfall risk assessment based on the IMIRILAND methodology for landslides in mountainous areas (Bonnard et al., 2004; Castelli and Scavia, 2008; Scavia et al., 2020). It supports semi-quantitative and quantitative workflows by combining hazard intensity, exposed elements, vulnerability, temporal probability, and the value of the elements at risk.
+
+    QRADE produces GIS risk-assessment layers, summary files, QA/QC reports, an interactive risk dashboard, and BIM-oriented deliverables including BIM-ready exports, IFC GUID mapping templates, and BCF issue files for high-risk and critical features.
+
+    The methodology was developed under the scientific supervision of Marta Castelli. QRADE was designed and implemented by Seyedmostafa Moeini, with technical support from Stefano Campus.
+
+    The development of QRADE was partially supported by PNRR (Piano Nazionale di Ripresa e Resilienza).
+
+icon=icon.png
+experimental=False
+deprecated=False
