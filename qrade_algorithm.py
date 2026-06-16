@@ -1937,9 +1937,7 @@ class QRADEAlgorithm(QgsProcessingAlgorithm):
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>QRADE Interactive Risk Report</title>
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-  integrity="sha256-p4NxAoJBhIINfQ1+Qp7IlJ41LwvD1Lt9+tI81ksK7Ew="
-  crossorigin="">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 <style>
 body {{
   margin: 0;
@@ -2660,9 +2658,7 @@ __WARNING_HTML__
 </ul>
 </section>
 </main>
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-  integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-  crossorigin=""></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
 const riskData = __RISK_GEOJSON__;
 const landcoverData = __LANDCOVER_GEOJSON__;

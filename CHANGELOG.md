@@ -8,6 +8,7 @@ The format is based on Keep a Changelog, and this project uses semantic versioni
 
 ### Changed
 
+- Removed Leaflet CDN integrity hash literals from generated dashboard HTML to avoid QGIS repository secrets-detection false positives. No plugin behavior changed.
 - Fixed plugin path casing for the `Templates/` folder.
 - Added conservative `Other` class handling to packaged classification tables.
 - Improved Manual land-cover validation when no valid vector file is selected.
