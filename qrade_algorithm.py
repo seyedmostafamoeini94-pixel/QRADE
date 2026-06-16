@@ -5079,8 +5079,8 @@ pre {{ white-space: pre-wrap; background: #f8fafc; padding: 12px; border: 1px so
 <h3>HELP:</h3>
 
 <p>Documentation:<br>
-<a href="https://github.com/seyedmostafamoeini94-pixel/QRADE#readme">QRADE documentation</a><br>
-<a href="https://github.com/seyedmostafamoeini94-pixel/QRADE/tree/main/training_dataset">Example training dataset</a></p>
+<a href="https://github.com/sm-moeini/QRADE#readme">QRADE documentation</a><br>
+<a href="https://github.com/sm-moeini/QRADE/tree/main/training_dataset">Example training dataset</a></p>
 
 <p>Contact:<br>
 Seyedmostafa Moeini: <a href="mailto:seyedmostafa.moeini@polito.it">seyedmostafa.moeini@polito.it</a><br>

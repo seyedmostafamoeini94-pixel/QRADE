@@ -143,8 +143,8 @@ Bundled plugin help is provided in:
 
 Additional resources:
 
-- QRADE documentation: https://github.com/seyedmostafamoeini94-pixel/QRADE#readme
-- Example training dataset: https://github.com/seyedmostafamoeini94-pixel/QRADE/tree/main/training_dataset
+- QRADE documentation: https://github.com/sm-moeini/QRADE#readme
+- Example training dataset: https://github.com/sm-moeini/QRADE/tree/main/training_dataset
 
 ## License
 

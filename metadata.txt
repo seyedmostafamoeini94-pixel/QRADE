@@ -9,9 +9,9 @@ author=Seyedmostafa Moeini, Marta Castelli
 email=seyedmostafa.moeini@polito.it
 category=Analysis
 tags=rockfall, landslide, risk assessment, hazard, exposure, vulnerability
-homepage=https://github.com/seyedmostafamoeini94-pixel/QRADE
-repository=https://github.com/seyedmostafamoeini94-pixel/QRADE
-tracker=https://github.com/seyedmostafamoeini94-pixel/QRADE/issues
+homepage=https://github.com/sm-moeini/QRADE
+repository=https://github.com/sm-moeini/QRADE
+tracker=https://github.com/sm-moeini/QRADE/issues
 license=GPL-3.0-or-later
 hasProcessingProvider=True
 
