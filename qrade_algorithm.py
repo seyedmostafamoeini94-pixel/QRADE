@@ -1875,7 +1875,13 @@ class QRADEAlgorithm(QgsProcessingAlgorithm):
         for geojson in (risk_geojson, landcover_geojson):
             for feature in geojson.get('features', []) if isinstance(geojson, dict) else []:
                 properties = feature.get('properties') if isinstance(feature, dict) else {}
-                classification = properties.get('classification') if isinstance(properties, dict) else None
+                classification = None
+                if isinstance(properties, dict):
+                    for key in ('classification', 'Classification', 'landcover', 'type'):
+                        candidate = properties.get(key)
+                        if candidate is not None and str(candidate).strip():
+                            classification = candidate
+                            break
                 if classification is not None and str(classification).strip():
                     all_classifications.add(str(classification).strip())
         all_classifications = sorted(all_classifications)
@@ -2733,6 +2739,10 @@ function isHighCriticalRisk(riskTotal) {{
 function props(feature) {{
   return feature && feature.properties ? feature.properties : {{}};
 }}
+function landcoverClassificationValue(feature) {{
+  const p = props(feature);
+  return valueText(p.classification || p.Classification || p.landcover || p.type || 'Unknown') || 'Unknown';
+}}
 function qradeId(properties) {{
   return valueText(properties.qrade_id || properties.fid || properties.id || properties.source_layer_feature_id);
 }}
@@ -2814,10 +2824,9 @@ function riskPopup(feature) {{
   ]);
 }}
 function landcoverPopup(feature) {{
-  const p = props(feature);
   return popupTable('LandCover', [
-    ['classification', p.classification],
-    ['qrade_id', qradeId(p)]
+    ['Classification', landcoverClassificationValue(feature)],
+    ['qrade_id', qradeId(props(feature))]
   ]);
 }}
 function genericPopup(title, feature) {{
@@ -2826,7 +2835,7 @@ function genericPopup(title, feature) {{
   return popupTable(title, entries.length ? entries : [['Attributes', 'No attributes available']]);
 }}
 function landcoverStyle(feature) {{
-  const classification = valueText(props(feature).classification);
+  const classification = landcoverClassificationValue(feature);
   const fillColor = landcoverClassColors[classification] || landcoverClassColors.Other || '#000000';
   return {{
     color: fillColor,
@@ -2928,7 +2937,7 @@ function initDashboard() {{
   }}
   function landcoverMatchesFilters(feature) {{
     const classificationFilter = document.getElementById('classificationFilter').value;
-    const classification = normalizedText(props(feature).classification);
+    const classification = normalizedText(landcoverClassificationValue(feature));
     return classificationFilter === 'All' || classification === normalizedText(classificationFilter);
   }}
   function filteredLandcoverFeatures() {{
@@ -2962,8 +2971,15 @@ function initDashboard() {{
       features: filtered
     }}, {{
       pane: 'landcoverPane',
+      interactive: true,
       style: landcoverStyle,
-      onEachFeature: (feature, layer) => layer.bindPopup(landcoverPopup(feature))
+      onEachFeature: (feature, layer) => {{
+        const popupHtml = landcoverPopup(feature);
+        layer.bindPopup(popupHtml);
+        layer.on('click', event => {{
+          layer.openPopup(event && event.latlng ? event.latlng : undefined);
+        }});
+      }}
     }});
     landcoverLayerGroup.addLayer(currentLandcoverLayer);
   }}
@@ -3053,7 +3069,7 @@ function initDashboard() {{
     fitFirstAvailable([runoutBounds, analysisBounds, riskBounds], 'No valid Runout, analysis, or Risk extent was available. The map is using a default world view.');
   }}
   function fitLandcoverView() {{
-    fitFirstAvailable([landcoverBounds, analysisBounds, runoutBounds, riskBounds], 'No valid LandCover, analysis, Runout, or Risk extent was available. The map is using a default world view.');
+    fitFirstAvailable([landcoverBounds], 'No valid LandCover extent was available. The map is using a default world view.');
   }}
   function setViewButtons(activeView) {{
     document.getElementById('runoutRiskView').classList.toggle('active', activeView === 'risk');
@@ -3081,10 +3097,9 @@ function initDashboard() {{
     setViewButtons(currentView);
     rebuildLandcoverLayer();
     hideLayer(riskLayerGroup);
+    hideLayer(runoutLayer);
     ensureLayerVisible(landcoverLayerGroup);
-    ensureLayerVisible(runoutLayer);
     setFilterState();
-    bringLayerToFront(runoutLayer);
     bringLayerToFront(currentLandcoverLayer);
     if (zoom) fitLandcoverView();
   }}
