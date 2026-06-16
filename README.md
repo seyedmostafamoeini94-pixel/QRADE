@@ -135,13 +135,16 @@ Custom tables are saved in the user QGIS settings directory, not inside the pack
 
 When a manual/custom table is used in a QRADE run, the selected CSV is copied into the result folder under `risk_tables/` so the values used for the analysis can be reviewed later.
 
-## Documentation And Training Data
+## Documentation and Training Data
 
 Bundled plugin help is provided in:
 
 - `help/qrade_help.html`
 
-Detailed documentation and training datasets will be provided through the public QRADE repository. No PDF manual or training dataset is bundled in this release package.
+Additional resources:
+
+- QRADE documentation: https://github.com/seyedmostafamoeini94-pixel/QRADE#readme
+- Example training dataset: https://github.com/seyedmostafamoeini94-pixel/QRADE/tree/main/training_dataset
 
 ## License
 

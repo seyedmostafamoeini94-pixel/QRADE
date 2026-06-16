@@ -5079,12 +5079,12 @@ pre {{ white-space: pre-wrap; background: #f8fafc; padding: 12px; border: 1px so
 <h3>HELP:</h3>
 
 <p>Documentation:<br>
-link User Manual<br>
-link training dataset</p>
+<a href="https://github.com/seyedmostafamoeini94-pixel/QRADE#readme">QRADE documentation</a><br>
+<a href="https://github.com/seyedmostafamoeini94-pixel/QRADE/tree/main/training_dataset">Example training dataset</a></p>
 
 <p>Contact:<br>
-seyedmostafa.moeini@polito.it<br>
-marta.castelli@polito.it</p>
+Seyedmostafa Moeini: <a href="mailto:seyedmostafa.moeini@polito.it">seyedmostafa.moeini@polito.it</a><br>
+Marta Castelli: <a href="mailto:marta.castelli@polito.it">marta.castelli@polito.it</a></p>
 """
 
     def helpUrl(self):

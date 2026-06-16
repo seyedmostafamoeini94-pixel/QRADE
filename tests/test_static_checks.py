@@ -280,10 +280,10 @@ def check_algorithm_text(checks: StaticChecks) -> None:
         'Open the QRADE Smart Assistant to review the generated dashboard, QA/QC report,',
         'QRADE (Risk Assessment for Damage and Exposure) is a QGIS Processing algorithm for rockfall risk assessment.',
         'The QuickOSM plugin is required when using Auto land-cover generation from OpenStreetMap data.',
-        'link User Manual',
-        'link training dataset',
-        'seyedmostafa.moeini@polito.it',
-        'marta.castelli@polito.it',
+        '<a href="https://github.com/seyedmostafamoeini94-pixel/QRADE#readme">QRADE documentation</a>',
+        '<a href="https://github.com/seyedmostafamoeini94-pixel/QRADE/tree/main/training_dataset">Example training dataset</a>',
+        'Seyedmostafa Moeini: <a href="mailto:seyedmostafa.moeini@polito.it">seyedmostafa.moeini@polito.it</a>',
+        'Marta Castelli: <a href="mailto:marta.castelli@polito.it">marta.castelli@polito.it</a>',
     ]
     missing_output_snippets = [snippet for snippet in required_output_snippets if snippet not in text]
     checks.check(

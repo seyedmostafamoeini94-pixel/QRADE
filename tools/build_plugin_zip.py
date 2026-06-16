@@ -63,6 +63,7 @@ EXCLUDED_DIR_NAMES = {
     "tests",
     "tools",
     "training dataset",
+    "training_dataset",
 }
 
 EXCLUDED_FILE_SUFFIXES = {
@@ -252,6 +253,7 @@ def validate_zip_structure(zip_path: Path, plugin_folder_name: str) -> bool:
             "tests",
             "tools",
             "training dataset",
+            "training_dataset",
         } for part in parts):
             suspicious_entries.append(name)
         elif name.endswith((".pyc", ".tmp", ".bak", ".log")):

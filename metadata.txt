@@ -6,12 +6,12 @@ qgisMaximumVersion=4.99
 description=Rockfall risk assessment plugin based on the IMIRILAND method
 version=1.0.0
 author=Seyedmostafa Moeini, Marta Castelli
-email=TODO: add maintainer email before publication
+email=seyedmostafa.moeini@polito.it
 category=Analysis
 tags=rockfall, landslide, risk assessment, hazard, exposure, vulnerability
-homepage=TODO: add project homepage or GitHub repository URL before publication
-repository=TODO: add GitHub repository URL before publication
-tracker=TODO: add GitHub issues URL before publication
+homepage=https://github.com/seyedmostafamoeini94-pixel/QRADE
+repository=https://github.com/seyedmostafamoeini94-pixel/QRADE
+tracker=https://github.com/seyedmostafamoeini94-pixel/QRADE/issues
 license=GPL-3.0-or-later
 hasProcessingProvider=True
 
